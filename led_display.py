@@ -24,7 +24,7 @@ class SixteenSegmentDisplay:
         self.clear()
     
     def create_segments(self):
-        # Segment coordinates with corrected diagonal lines
+        # Segment coordinates with corrected slopes for j and k
         segments = {
             'a1': [(25, 15, 55, 22)],     # top left horizontal
             'a2': [(65, 15, 95, 22)],     # top right horizontal
@@ -36,12 +36,12 @@ class SixteenSegmentDisplay:
             'f': [(18, 22, 25, 87)],      # top left vertical
             'g1': [(25, 87, 55, 93)],     # middle left horizontal
             'g2': [(65, 87, 95, 93)],     # middle right horizontal
-            'h': [(25, 22, 55, 87)],      # diagonal from top left to center
-            'i': [(55, 22, 62, 87)],      # middle top left vertical
-            'j': [(55, 87, 95, 22)],      # diagonal from center to top right (corrected)
-            'k': [(25, 158, 62, 93)],     # diagonal from bottom left to center (corrected)
-            'l': [(55, 93, 62, 158)],     # middle bottom left vertical
-            'm': [(58, 93, 95, 158)]      # diagonal from center to bottom right
+            'h': [(25, 22, 58, 87)],      # diagonal from top left to center
+            'i': [(58, 22, 62, 87)],      # middle top vertical
+            'j': [(62, 87, 95, 22)],      # diagonal from center to top right (fixed slope)
+            'k': [(25, 158, 58, 93)],     # diagonal from center to bottom left (fixed slope)
+            'l': [(58, 93, 62, 158)],     # middle bottom vertical
+            'm': [(62, 93, 95, 158)]      # diagonal from center to bottom right
         }
         
         for segment, coords_list in segments.items():
@@ -162,7 +162,7 @@ class LEDDisplayApp:
         # Define character patterns
         self.char_patterns = {
             'A': ['a1', 'a2', 'b', 'c', 'f', 'e', 'g1', 'g2'],
-            'B': ['a1', 'a2', 'b', 'c', 'd1', 'd2', 'f', 'e', 'j', 'm'],
+            'B': ['a1', 'a2', 'b', 'c', 'd1', 'd2', 'f', 'e', 'g1', 'g2'],
             'C': ['a1', 'a2', 'f', 'e', 'd1', 'd2'],
             'D': ['a1', 'a2', 'b', 'c', 'd1', 'd2', 'i', 'l'],
             'E': ['a1', 'a2', 'f', 'e', 'd1', 'd2', 'g1', 'g2'],
@@ -186,7 +186,7 @@ class LEDDisplayApp:
             'W': ['f', 'e', 'b', 'c', 'k', 'm'],
             'X': ['h', 'j', 'k', 'm'],  # Uses all diagonals
             'Y': ['h', 'j', 'l'],
-            'Z': ['a1', 'a2', 'j', 'k', 'd1', 'd2'],  # Updated Z pattern
+            'Z': ['a1', 'a2', 'j', 'k', 'd1', 'd2'],  
             ' ': []
         }
 

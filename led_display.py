@@ -2,10 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import font as tkfont
 
-import tkinter as tk
-from tkinter import ttk
-from tkinter import font as tkfont
-
 class SixteenSegmentDisplay:
     def __init__(self, master, position):
         self.canvas = tk.Canvas(master, width=120, height=180, bg='black')
@@ -73,8 +69,6 @@ class SixteenSegmentDisplay:
     def clear(self):
         for segment in self.segments:
             self.set_segment(segment, False)
-
-# [Rest of the code remains exactly the same]
 
 class LEDDisplayApp:
     def __init__(self, root):

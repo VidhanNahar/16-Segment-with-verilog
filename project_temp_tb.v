@@ -45,8 +45,8 @@ module alphabet_to_16segment (
         segment_array[4] = 16'b1100111111000000;  // E
         segment_array[5] = 16'b1100001111000000;  // F
         segment_array[6] = 16'b1101111101000000;  // G
-        segment_array[7] = 16'b0000000001110110;  // H
-        segment_array[8] = 16'b0000000000110000;  // I
+        segment_array[7] = 16'b0011001111000000;  // H
+        segment_array[8] = 16'b1100110000010010;  // I
         segment_array[9] = 16'b1100101000010010;  // J
         segment_array[10] = 16'b0000001110001001; // K
         segment_array[11] = 16'b0000111100000000; // L

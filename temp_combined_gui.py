@@ -2,6 +2,12 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import font as tkfont
 
+fileContents = ""
+
+def read_file():
+    with open("character_input.txt", "r") as file:
+        fileContents = file.read()
+
 class SixteenSegmentDisplay:
     def __init__(self, master, position):
         self.canvas = tk.Canvas(master, width=120, height=180, bg='black')
@@ -147,8 +153,8 @@ class LEDDisplayApp:
             '1111001111111111': 'E',
             '1111001111110000': 'F',
             '1111000011111111': 'G',
-            '0011111111110011': 'H',
-            '1111110000001111': 'I',
+            '0011001111000000': 'H',
+            '1100110000010010': 'I',
             '0000110011111111': 'J',
             '0011001111110101': 'K',
             '0011000000111111': 'L',
@@ -204,4 +210,5 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.configure(bg='black')
     app = LEDDisplayApp(root)
+    read_file()
     root.mainloop()
